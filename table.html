@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Table Page</title>
+        <link rel="stylesheet" href="myStyle.css">
+        <link rel="icon" type="image/x-icon" href="/images/R.png">
+
+    </head>
+    <body>
+        <table id="table" style=" background-color: honeydew; border: 1px solid rgb(63, 15, 15); size: 300%; border-spacing: 0;">
+            <tr>
+              <th style="border: 1px solid rgb(63, 15, 15);">Name</th>
+              <th style="border: 1px solid rgb(63, 15, 15);">Surname</th>
+              <th style="border: 1px solid rgb(63, 15, 15);">Mobile no</th>
+              <th style="border: 1px solid rgb(63, 15, 15);">Email</th>
+              <th style="border: 1px solid rgb(63, 15, 15);">Blood Group</th>
+              <th style="border: 1px solid rgb(63, 15, 15);">Gender</th>
+            </tr>
+            <tr>
+              <td>Abhishek</td>
+              <td>Kumar</td>
+              <td>9304648597</td>
+              <td>abhishekkc124@gmail.com</td>
+              <td>B+</td>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <td>Mahendra Singh</td>
+              <td>Dhoni</td>
+              <td>7777777777</td>
+              <td>mahi07@csk.com</td>
+              <td>O+</td>
+              <td>Male</td>
+            </tr>
+          </table>
+
+          <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            let table = document.getElementById('table');
+            let row = table.insertRow(-1);
+
+            let c1 = row.insertCell(0);
+            let c2 = row.insertCell(1);
+            let c3 = row.insertCell(2);
+            let c4 = row.insertCell(3);
+            let c5 = row.insertCell(4);
+            let c6 = row.insertCell(5);
+
+            c1.innerText = urlParams.get('fname');
+            c2.innerText = urlParams.get('lname');
+            c3.innerText = urlParams.get('mobileno');
+            c4.innerText = urlParams.get('email');
+            c5.innerText = urlParams.get('blood');
+            c6.innerText = urlParams.get('gender');
+
+          </script>
+    </body>
+</html>
